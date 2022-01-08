@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "04b3c7a4-bd1a-42e7-b531-3806b43a366a",
+		"name": "fibaSchemas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "game",
+			"item": [
+				{
+					"name": "createplayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Eucaris\",\r\n    \"lastname\": \"Castrillon\",\r\n    \"headshot\": \"61d6a82e21f8c550411a37a9\",\r\n    \"height\": {\r\n        \"centimeters\": 30,\r\n        \"inches\": 40\r\n    },\r\n    \"position\": \"center\" ,\r\n    \"shirtnumber\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "creategamedefinition",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gametype\": \"Basket\",\r\n    \"phase\": \"qualification\",\r\n    \"roundname\": \"African Coupe\" ,\r\n    \"groupname\": \"Femenino\",\r\n    \"isgrouproundname\": true,\r\n    \"grounamecompatibility\": \"Basket\",\r\n    \"venue\": {\r\n    \"city\": \"Angola\",\r\n    \"country\": \"Africa\",\r\n    \"name\": \"Coup International\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/gamedefinition",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"gamedefinition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createteamboxscores",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"team\" : \"61d7ae1478dfc850b583fb9a\",\r\n    \"court\" : {\r\n        \"player\": \"61d7eb8241d478676bb5a72d\",\r\n        \"playerstarter\": true,\r\n        \"minutesplayer\": 30\r\n    },\r\n     \"bench\" : {\r\n        \"player\": \"61d7eb8241d478676bb5a72d\",\r\n        \"playerstarter\": true,\r\n        \"minutesplayer\": 10\r\n    },\r\n    \"roster\" : {\r\n        \"player\": \"61d7eb8241d478676bb5a72d\",\r\n        \"playerstarter\": false,\r\n        \"minutesplayer\": 25\r\n    },\r\n    \"total\": {\r\n        \"totalpoints\": 20,\r\n        \"rebounds\": {\r\n            \"offensive\": 150,\r\n            \"defensive\": 120,\r\n            \"total\": 270\r\n        },\r\n        \"assists\": 45,\r\n    \"steeals\": 25,\r\n    \"blockedshots\": 36,\r\n    \"personalfouls\": 5,\r\n    \"field-goals\": {\r\n        \"made\": 12,\r\n        \"attempt\": 10,\r\n        \"percentage\":50\r\n    },\r\n    \"field-goals-2-points\": {\r\n        \"made\": 5,\r\n        \"attempt\": 8,\r\n        \"percentage\":3\r\n    },\r\n    \"field-goals-3-points\" : {\r\n        \"made\": 2,\r\n        \"attempt\": 2,\r\n        \"percentage\":1\r\n    },\r\n    \"free-throws\": {\r\n        \"made\": 7,\r\n        \"attempt\": 7,\r\n        \"percentage\":7\r\n    },\r\n    \"turnovers\": 80\r\n    }\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/gameboxscore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"gameboxscore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "creategamtriggers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"gamestarter\": true,\r\n  \"gameended\": true,\r\n  \"periodlist\": {\r\n      \"period\": \"61d7fd227a5974d4c2a3db48\",\r\n      \"homescore\" : 70,\r\n      \"awayscore\": 90\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/gametriggers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"gametriggers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createperiod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"type\": \"overtime\",\r\n     \"index\": 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/gameperiod",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"gameperiod"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "createTeaam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"logo\": \"61d6a82e21f8c550411a37a9\",\r\n    \"name\": \"Coupe International Basket Feminine\",\r\n    \"abbreviation\": \"CIBF\",\r\n    \"country\": \"Japon\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"team"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "standings",
+			"item": [
+				{
+					"name": "createGroupBracketsSingleGame",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type-name\": \"group-brackets-single-game\",\r\n    \"game\": \"61d6b3c807cfbb304d367a6d\",\r\n    \"group-brackets-type\": \"group-brackets-single-game\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/standings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"standings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "media",
+			"item": [
+				{
+					"name": "getmedia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7000/api/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postmediagallery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mediaItem\": \"article\",\r\n    \"title\" : \"conexion\",\r\n    \"thumbnail\": \"61d6a82e21f8c550411a37a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postmediaarticle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mediaItem\": \"article\",\r\n    \"title\" : \"conexion\",\r\n    \"thumbnail\": \"61d6a82e21f8c550411a37a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postmediavideo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mediaItem\": \"video\",\r\n    \"duration\": 20,\r\n    \"youtubeid\": \"y3W1fN7gpHw\",\r\n    \"link\": \"https://www.youtube.com/watch?v=y3W1fN7gpHw\",\r\n    \"title\" : \"Juegp NBA\",\r\n    \"thumbnail\": \"61d6a82e21f8c550411a37a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postmediaLBTVVideo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mediaItem\": \"LBTVideo\",\r\n    \"duration\": 60,\r\n    \"islive\": false,\r\n    \"perform\": \"v33kVncJ26o\",\r\n    \"title\" : \"Juegp NBA\",\r\n    \"thumbnail\": \"61d6a82e21f8c550411a37a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createThumbnail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"asasa5s4a5s45a45a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/imageCloudinary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"imageCloudinary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getThumbnail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"public-id\": \"asasa5s4a5s45a45a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/imageCloudinary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"imageCloudinary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
